@@ -4,13 +4,13 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 export default class Note extends React.Component {
   render() {
     return (
-      <View key={this.props.keyVal} style={styles.note}>
-        <Text style={styles.noteText}>{this.val.date}</Text>
-        <Text style={styles.noteText}>{this.val.note}</Text>
+      <View key={this.props.keyval} style={styles.note}>
+        <Text style={styles.noteText}>{this.props.val.date}</Text>
+        <Text style={styles.noteText}>{this.props.val.note}</Text>
         <TouchableOpacity
           onPress={this.props.deleteMethod}
           style={styles.noteDelete}>
-          <Text style={noteDeleteText}>Delete</Text>
+          <Text style={styles.noteDeleteText}>Delete</Text>
         </TouchableOpacity>
       </View>
     );
@@ -19,7 +19,7 @@ export default class Note extends React.Component {
 
 const styles = StyleSheet.create({
   note: {
-    position: 'absolute',
+    position: 'relative',
     padding: 20,
     paddingRight: 100,
     borderBottomWidth: 2,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     bottom: 10,
     right: 10,
   },
-  noteDelete: {
+  noteDeleteText: {
     color: 'white',
   },
 });
